@@ -8,3 +8,7 @@ github command
 
 `$ git push origin master`
 
+クローン
+`$ git clone [url]`
+
+
