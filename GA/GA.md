@@ -1,6 +1,6 @@
 
 
-#遺伝的アルゴリズム(GA)
+# 遺伝的アルゴリズム(GA)
 
 https://www.slideshare.net/kzokm/genetic-algorithm-41617242
 
@@ -8,13 +8,13 @@ https://www.slideshare.net/kzokm/genetic-algorithm-41617242
 
 
 
-##What's GA
+## What's GA
 
 生物進化における遺伝と適者生存による自然淘汰の仕組みをソフトウェア的に模すことで複雑な問題に対する最適解を探索する手法.
 
 ある命題に対する解の候補を_遺伝子(gene)_とその集合体である_染色体(chromosome)_で表現した_個体(individal)_を複数用意し, _適応度(fitness)_の高い個体を優先して_交叉(crossover)_, _突然変異(mutation)_などの操作を繰り返しながら最適解の探索を行う.
 
-##Merits of GA
+## Merits of GA
 
 評価関数の可微分性や単峰性などの知識がない場合であっても適応可能.
 
@@ -22,7 +22,7 @@ https://www.slideshare.net/kzokm/genetic-algorithm-41617242
 
 遺伝子の表現の仕方によって, 組合せ最適化問題やNP困難な問題などの様々な問題に対する適用が可能.
 
-##Genetic Glossary
+## Genetic Glossary
 
 - 遺伝子(gane)
 
@@ -66,7 +66,7 @@ https://www.slideshare.net/kzokm/genetic-algorithm-41617242
 
 符号化の反対. 遺伝子型から表現型への変換.
 
-##Genetic Algorithms
+## Genetic Algorithms
 
 1. 解を表現する符号化方法を決定する.
 
@@ -95,7 +95,7 @@ https://www.slideshare.net/kzokm/genetic-algorithm-41617242
 
 8. 最終世代の中で最も適応度の高い個体を「解」として出力する.
 
-##Chromosome Encodings
+## Chromosome Encodings
 
 解の特徴を遺伝子として表現する.
 
@@ -133,9 +133,9 @@ https://www.slideshare.net/kzokm/genetic-algorithm-41617242
 
   遺伝的プログラミング(GP)や進化的プログラミング(EP)などの表現に用いられる
 
-##Encoding Examples
+## Encoding Examples
 
-###ナップザック問題(Knapzack Problem)
+### ナップザック問題(Knapzack Problem)
 
 容量$C$のナップザックが１つと、各々の価値が$P_i$,  容量が$C_i$であるところの$n$個の品物$E_i$が与えられた時, $C$を超えない範囲でいくつかの品物をナップザックに詰め, 入れた品物の価値の和を最大化するにはどの品物を選べば良いか？
 
@@ -145,9 +145,9 @@ $n$個の荷物 $->$ 遺伝子長$(L) $= $n$
 
 $i$番目の荷物 $->$ 遺伝子座$(p)$ = $i$
 
-荷物$E_i​$を入れる $->​$ 遺伝子$[i]​$ = $1​$
+荷物$E_i\UTF{200B}$を入れる $->\UTF{200B}$ 遺伝子$[i]\UTF{200B}$ = $1\UTF{200B}$
 
-荷物$E_i​$を入れない $->​$ 遺伝子$[i]​$ = $0​$
+荷物$E_i\UTF{200B}$を入れない $->\UTF{200B}$ 遺伝子$[i]\UTF{200B}$ = $0\UTF{200B}$
 
 適応度 $->$ 持っている荷物の総価値
 
@@ -156,12 +156,12 @@ $i$番目の荷物 $->$ 遺伝子座$(p)$ = $i$
 | 重さ $(C_i) \ \ Kg $ | 0.9   | 1.1   | 0.7   | 1.4   | 0.5   | 1.3   | 1.1   |      | 1.6   |
 | 価値 $(P_i) \ \$ $   | 1.0   | 1.3   | 0.9   | 1.5   | 0.5   | 1.1   | 1.2   |      | 1.4   |
 | 遺伝子表現           | 1     | 0     | 0     | 1     | 0     | 1     | 0     | $…$  | 0     |
-| 重さ $<= C \ \ Kg$   | 0.9   |       | +     | 1.4   | +     | 1.3   | +     | $…$  |       |
+| 重さ $<= C \ \\UTF{00A0}Kg$   | 0.9   |       | +     | 1.4   | +     | 1.3   | +     | $…$  |       |
 | 適応度               | 1.0   |       | +     | 1.5   | +     | 1.1   | +     | $…$  |       |
 
 
 
-###循環セールスマン問題(Travelling Salesman Problem)
+### 循環セールスマン問題(Travelling Salesman Problem)
 
 $n$個の都市$C_i$と, それぞれの都市間の距離$D_{i,j}$が与えられている時,最初の都市を出発し, 全ての都市を経由して, 同じ都市に戻ってくるルートのうち, 最短のルートを求めよ.
 
@@ -185,7 +185,7 @@ $i$番目に訪れる $->$ 遺伝子座$(p) = i$
 
 適応度   $\frac{1}{D_{5,8}+D_{8,2}+D_{2,7}+D_{7,9}+D_{9,2}+D_{1,3}+D_{3,x}+$…$+D_{4,5}}$
 
-##Genetic Operations,Selection, Crossover, Mutation
+## Genetic Operations,Selection, Crossover, Mutation
 
 - **繁殖(reproduction)**
   - **選択(selection)** $->$**交叉(crassover)** $->$ **突然変異(mutation)** $->$ **選択(selection)** $->$ **交叉(crossover)** $->$  $...$
@@ -418,7 +418,7 @@ $i$番目に訪れる $->$ 遺伝子座$(p) = i$
 
 
 
-##New Generation Alternation Model
+## New Generation Alternation Model
 
 - 離散世代モデル
 
@@ -456,7 +456,7 @@ $i$番目に訪れる $->$ 遺伝子座$(p) = i$
 
     家族ないで選択を行うため, 計算負荷が軽く, 並列計算への適応もしやすい.
 
-##Known Issues
+## Known Issues
 
 - 初期収束
 
@@ -506,7 +506,7 @@ $i$番目に訪れる $->$ 遺伝子座$(p) = i$
 
   となり, 遺伝子長に依存しない.
 
-##Summary
+## Summary
 
 GAとは, 生物の遺伝を模したアルゴリズム. 適者生存による自然淘汰で最適解を探索することができる. 対象となる問題に関する数学的な知識がない場合でも適用が可能.
 
