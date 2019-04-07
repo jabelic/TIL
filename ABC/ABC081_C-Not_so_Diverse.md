@@ -1,9 +1,6 @@
 ### ABC081 C-Not so Diverse
 
 ```python
-
-```
-
 import collections
 from operator import itemgetter
 N,K = map(int,input().split())
@@ -19,8 +16,6 @@ else:
     for i in range(len(skind)-K):
         sumNum += skind[i][1]
     print(sumNum)
-
-```
 
 ```
 
