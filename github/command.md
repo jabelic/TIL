@@ -10,6 +10,17 @@ github command
 
 `$ git config --global alias.co checkout`
 
+- 初めてのpush
+
+`$ git add .`
+
+`$ git commit -m "hogehoge"`
+
+`$ git remote add origin https://github.com/jabelic/hogehoge.git`
+
+`$ git push origin master`
+
+
 - 更新の仕方
 
 `$ git add .`
