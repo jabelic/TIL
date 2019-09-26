@@ -11,6 +11,9 @@ github command
 `$ git config --global alias.co checkout`
 
 - 初めてのpush
+`$ echo "# experiment_class" >> README.md`
+
+`$ git init`
 
 `$ git add .`
 
