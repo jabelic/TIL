@@ -60,6 +60,40 @@ $$
 のように表すことができる. この$P_n(x)$はLagrangeの補間多項式(Lagrange interpolation polyno-mial)と呼ばれる.
 
 
+### 2次のAdams-Bashforth法
+
+$x_k$ と$x_{k+1}$の間の$f(x, y(x))$を現在いる第$k$ステップの情報$x_k,\ f_k( = f(x_k, y_k))$と, １つ前の第$k-1$ステップの情報$x_{k-1},\ f_{k-1}( = f(x_{k-1}, y_{k-1}))$を使った１次のLagrange補間多項式P_1(x) で近似することを考える.
+
+すなわち
+$$
+\begin{align}
+y_{k+1} &= y_k + \int_{x_k}^{x_{k+1}} P_1(x) dx\\
+P_1(x) &= f_{k-1} L_{k-1}(x) + f_k L_k (x),\\
+L_{k-1}(x) &= \frac{x - x_k}{x_{k-1} - x_k}\hspace{10mm} L_{k}(x) = \frac{x - x_{k-1}}{x_{k} - x_{k-1}}\\
+\end{align}
+$$
+
+
+ここで簡単のため刻み$h$は一定とし, また積分の便宜のために $x = x_k + h\xi$により $\xi$を導入すると, $x_{k\pm1} = x_k \pm h$より
+$$
+\int_{x_k}^{x_{k+1}} L_{k-1}(x) dx = \int_{x_k}^{x_{k+1}} \frac{x - x_k}{x_{k-1} - x_k} dx = \int_0^1 \frac{h\xi}{-h} hd\xi = -h \left[\frac{1}{2} \xi^2\right]^1_0 = -\frac{1}{2}h,\\
+$$
+
+
+$$
+\int_{x_k}^{x_{k+1}} L_{k}(x) dx = \int_{x_k}^{x_{k+1}} \frac{x - x_{k-1}}{x_{k} - x_{k-1}} dx = \int_0^1 \frac{h(\xi+1)}{h} hd\xi = h \left[\frac{1}{2} \xi^2 + \xi\right]^1_0 = \frac{3}{2}h,\\
+$$
+
+となって１つの積分スキーム
+$$
+y_{k+1} = y_k + \frac{h}{2}(-f_{k-1} + 3f_k)\\
+$$
+を得る.
+
+
+
+
+
 
 
 
