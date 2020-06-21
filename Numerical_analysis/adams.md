@@ -91,6 +91,46 @@ $$
 
 
 
+---
+
+刻み幅 $x_{k+1} - x{k} = h$で, $x = x_k + h\xi$ より
+$$
+\frac{x - x_k}{x_{k-1} - x_k} = \frac{h\xi}{x_{k-1} - x_k}
+$$
+
+$x_{k} - x{k-1} = h$より $x_{k-1} - x_k = -h$
+
+$$
+\frac{h\xi}{x_{k-1} - x_k} = \frac{h\xi}{-h}
+$$
+
+$x = x_k + h\xi$より, 
+$$
+\frac{dx}{d\xi} = h,\\
+x: x_k \to x_{k+1}\\
+\xi: 0 \to 1\ \ \ \because x_{k+1} - x_k = h
+$$
+
+---
+
+このスキームの局所打ち切り誤差は
+$$
+\begin{align}
+\Delta_{k+1} &= y(x_{k+1}) - \left\{y(x_k) + \frac{h}{2}[-f(x_{k-1}, y(x_{k-1})) + 3f(x_k, y(x_k))]\right\}\\
+&= y(x_{k+1}) -  y(x_{k}) - \frac{h}{2}[-y^\prime(x_{k-1})) + 3y^\prime(x_k)]\\
+&= \left\{ y + hy^\prime + \frac{1}{2}h^2 y^{\prime\prime} + \frac{1}{6}h^3y^{\prime\prime\prime} + \cdots \right\} - \frac{h}{2}\left[2y^\prime + hy^{\prime\prime} - \frac{1}{2}h^2hy^{\prime\prime\prime} + \cdots \right]\\
+&= \frac{5}{12}h^3hy^{\prime\prime\prime} + O(h^4)\\
+\end{align}
+$$
+
+
+
+
+
+
+
+
+
 
 
 
